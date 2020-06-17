@@ -38,12 +38,8 @@ class PeopleBlock extends Component {
 
   nameChangeHandler = (event, id) => {
     const people = [...this.state.people];
-
-    let change = people.filter((cur) => {
-      return cur.id === id;
-    });
+    let change = people.filter((cur) => cur.id === id);
     change[0].name = event.target.value;
-
     this.setState({ people });
   };
 

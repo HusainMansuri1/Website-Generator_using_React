@@ -9,24 +9,17 @@ const ToggleButton = ({ current, click, decideClasses }) => {
 };
 
 const CounterBlock = (props) => {
+
   const togglerClasses = (id) => {
-    // use string - common class operations
     const components = props.pushComponentState;
     let classes = 'toggler';
+
     components.map((cur) => {
       if(cur.show && cur.id === id) classes += ' selected';
       return true;
     });
-    return classes;
 
-    // // use arrays - complex class operations.
-    // const components = props.pushComponentState;
-    // const classes = ['toggler'];
-    // components.map((cur) => {
-    //   if(cur.show && cur.id === id) 
-    //     classes.push('selected');
-    // });
-    // return classes.join(' ');
+    return classes;
   }
 
   return (
