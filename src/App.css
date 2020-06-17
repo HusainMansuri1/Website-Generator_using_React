@@ -1,0 +1,38 @@
+*{box-sizing: border-box;}
+
+button,a{cursor: pointer;}
+
+button{padding: 10px;border: none;background: #fff;outline: none;}
+
+li{margin-bottom: 20px;list-style: none;}
+
+input{margin-top: 3px;}
+
+input:focus{outline: 2px solid #ff3636;}
+
+.toggler{width: 100%;margin-bottom: 10px;display: block;background: #25bc25;color: #fff;font: 400 18px sans-serif;letter-spacing: .5px;}
+.toggler.selected{background: #d60000;}
+
+.toggler::after{content: " + ";margin-left: 5px;font-size: 20px;font-weight: 600; }
+.toggler::before{content: 'Add ';}
+
+.toggler.selected::after{content: " - ";}
+.toggler.selected::before{content: 'Remove '}
+
+.counter-block{margin: 20px 5px;}
+
+.banner {padding: 20px 0;background: #444;color: #fff;text-align: center;}
+
+.divider-block{height: calc(100% - 143px);display: flex;}
+.static-content{flex: 1;}
+.dynamic-add{flex: 3;}
+.dynamic-add{height: 100vh;border-left: 1px solid #ccc; overflow: auto; position: relative;background:#ccc;transition: width .3s ease-in;}
+.dynamic-add.full-active{width: 100%;border: 0;margin: 0;position: absolute;top: 0;left: 0;}
+
+.people{padding: 10px;background: #fff;}
+
+.get-gf-btn{background: crimson;color: #fff;}
+
+.full-width{width: 50px;height: 50px;position: absolute;z-index: 2;top: 0px;left: 0px;background: cornflowerblue;color: #fff;font-size: 22px;text-align: center;}
+.full-width::after{content: ' ++';font-size: 25px;}
+.act::after{content: ' --';font-size: 25px;}
