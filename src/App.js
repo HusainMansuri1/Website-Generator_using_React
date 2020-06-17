@@ -62,17 +62,7 @@ class App extends Component {
           {/* <Banner /> */}
           <div className='divider-block'>
             <div className='static-content'>
-              {/* <div className='controls'>
-                <button data-id="1" id="toggle-persons" className={this.togglerClasses(1)} onClick={() => this.componentsToggleHandler(1)}>
-                  Add Banner
-                </button>
-                <button data-id="2" id="toggle-persons" className={this.togglerClasses(2)} onClick={() => this.componentsToggleHandler(2)}>
-                  Add Persons
-                </button>
-                {this.state.components.map((cur) => {
-                  return <ToggleButton key={'btn- ' + cur.id} current={cur} click={() => this.componentsToggleHandler(cur.id)} decideClasses={this.togglerClasses(cur.id)} />;
-                })}
-              </div> */}
+             
               <CounterBlock 
                 pushComponentState = {this.state.components}
                 // classes = {this.togglerClasses}
