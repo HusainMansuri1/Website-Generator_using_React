@@ -6,12 +6,13 @@ import StaticContent from './containerComponents/static-content';
 import DyanamicContent from './containerComponents/dynamic-content';
 
 class App extends Component {
+  componentsId = 1;
   state = {
     components: [
-      { id: 1, name: <Banner key='banner' />, show: true, btnText: 'Banner' },
-      { id: 2, name: <People key='girlfriends' />, show: true, btnText: 'Friends' },
-      { id: 3, name: <People key='more-girlfriends' />, show: false, btnText: 'More Friends' },
-      { id: 4, name: <People key='more-more-girlfriends' />, show: false, btnText: 'More More Friends' },
+      { id: this.componentsId++, name: <Banner key='banner' />, show: true, btnText: 'Banner' },
+      { id: this.componentsId++, name: <People key='girlfriends' />, show: true, btnText: 'Friends' },
+      { id: this.componentsId++, name: <People key='more-girlfriends' />, show: false, btnText: 'More Friends' },
+      { id: this.componentsId++, name: <People key='more-more-girlfriends' />, show: false, btnText: 'More More Friends' },
     ],
   };
 
@@ -21,7 +22,7 @@ class App extends Component {
     components.map((curr) => curr.id === id ? (curr.show = !curr.show) : null);
     this.setState({ components });
   };
-
+  
   // state change
   getAddedComponents = () => (
     this.state.components.map((curr) => curr.show ? curr.name : null)

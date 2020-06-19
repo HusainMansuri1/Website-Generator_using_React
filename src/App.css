@@ -1,10 +1,10 @@
 *{box-sizing: border-box;}
 
-button,a{cursor: pointer;}
+button,a{cursor: pointer;margin: 5px;}
 
 button{padding: 10px;border: none;background: #fff;outline: none;}
 
-li{margin-bottom: 20px;list-style: none;}
+li{margin-bottom: 10px;list-style: none;}
 
 input{margin-top: 3px;}
 
@@ -25,13 +25,15 @@ input:focus{outline: 2px solid #ff3636;}
 
 .divider-block{height: calc(100% - 143px);display: flex;}
 .static-content{flex: 1;}
-.dynamic-add{flex: 3;}
+.dynamic-add{flex: 2;}
 .dynamic-add{height: 100vh;border-left: 1px solid #ccc; overflow: auto; position: relative;background:#ccc;transition: width .3s ease-in;}
 .dynamic-add.full-active{width: 100%;border: 0;margin: 0;position: absolute;top: 0;left: 0;}
 
 .people{padding: 10px;background: #fff;}
 
-.get-gf-btn{background: crimson;color: #fff;}
+.get-gf-btn{background: #ff3636;color: #fff;}
+.delete-gf-btn{color: #f50000; font-weight: bold;padding: 0;}
+.add-gf-btn{color: #fff;background: #25bc25;}
 
 .full-width{width: 50px;height: 50px;position: absolute;z-index: 2;top: 0px;left: 0px;background: cornflowerblue;color: #fff;font-size: 22px;text-align: center;}
 .full-width::after{content: ' ++';font-size: 25px;}
