@@ -82,7 +82,10 @@ class App extends Component {
           <StaticContent 
             pushBtnState={this.state} 
             change={this.dashbodChange}
-            clickedOn = {this.componentsToggleHandler}/>
+            clickedOn = {this.componentsToggleHandler}
+            delete = {this.deleteGfHandler}
+            add={this.addGfHandler}
+          />
 
           <DyanamicContent
             check = {this.state.dynamicComponents}
