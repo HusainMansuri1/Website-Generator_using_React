@@ -20,74 +20,26 @@ const PeopleBlock = (props) => {
         <div className='persons-wrap'>
           <ul className='gf-block'>
             {/* <People name={this.state.people[0].name} age={this.state.people[0].age} click={() => this.getGirlfriendNameHandler('Saloni')} change={this.nameChangeHandler} />} */}
-            {props.pushPeople.map((peop, ind) => (
-              <People key={'gf-no-' + peop.id} onDeletee={() => this.deleteGfHandler(ind, peop.name)} name={peop.name} age={peop.age} change={(event) => this.nameChangeHandler(event, peop.id)} current={peop} />
+            {props.pushPeople.people.map((peop, ind) => (
+              <People key={'gf-no-' + peop.id} 
+                name={peop.name} 
+                age={peop.age} 
+                current={peop} 
+                change={(event) => props.onpchange(event, peop.id)} 
+                onDeletee={() => props.onDelete(ind, peop.name)} 
+                click={props.click}
+              />
             ))}
           </ul>
-          <button className="add-gf-btn" id="add-gf" onClick={this.addGfHandler}>
+          <button className="add-gf-btn" id="add-gf" onClick={props.onAdd}>
             Add More Gf
           </button> 
-          <button className="get-gf-btn" onClick={this.getGirlfriendNameHandler} id='next-girlfriend'>
+          {/* <button className="get-gf-btn" onClick={this.getGirlfriendNameHandler} id='next-girlfriend'>
             Get Gf's Names
-          </button>
+          </button> */}
         </div>
       </section>
     );
 }
 
 export default PeopleBlock;
-
-
-// gfId = 1;
-// state = {
-//   people: [
-//     { id: this.gfId++, name: 'Guess', age: '20' },
-//     { id: this.gfId++, name: 'Guess', age: '21' },
-//     { id: this.gfId++, name: 'Guess', age: '23' },
-//     // { id: this.gfId++, name: 'Guess', age: '21' },
-//     // { id: this.gfId++, name: 'Guess', age: '17' },
-//     // { id: this.gfId++, name: 'Guess', age: '19' },
-//   ],
-// };
-
-// getGirlfriendNameHandler = () => {
-//   const persons = ['Sana', 'Nashra', 'Juveria K', 'Juveria M', 'Tanzila', 'Ashfiya'];
-//   const people = [...this.state.people];
-
-//   people.map((current, index) => {
-//     return persons.filter((cur, ind) => {
-//       return index === ind ? (current.name = cur) : '';
-//     });
-//   });
-
-//   this.setState({ people });
-// };
-
-// nameChangeHandler = (event, id) => {
-//   const people = [...this.state.people];
-//   let change = people.filter((cur) => cur.id === id);
-//   event.target.classList.contains('name')
-//     ? change[0].name = event.target.value
-//     : change[0].age = event.target.value;
-//   this.setState({ people });
-// };
-
-// deleteGfHandler = (index, name) => {
-//   if(window.confirm(`Are you sure you want to delete  "${name}" from your life ?`)){
-//     const people = [...this.state.people];
-//     people.splice(index, 1);
-//     this.setState({ people });
-//   }
-// };
-
-// addGfHandler = () => {
-//   const people = [...this.state.people];
-//   let name = window.prompt("Enter name: ");
-//   let age = Number(window.prompt("Enter Age: "));
-//   if(name && age) {
-//     people.push({ id: this.gfId++, name: name, age: age });
-//     this.setState({ people });
-//   } else {
-//     alert("Gf creation failed: Please enter both fields\nName in letters \nAge in Numbers");
-//   }
-// };

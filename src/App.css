@@ -1,12 +1,12 @@
 *{box-sizing: border-box;}
 
-button,a{cursor: pointer;margin: 5px;}
+button,a{margin: 5px;cursor: pointer;}
 
 button{padding: 10px;border: none;background: #fff;outline: none;}
 
-li{margin-bottom: 10px;list-style: none;}
+li{padding: 5px;border: 1px solid #ccc;margin-bottom: 10px;cursor: pointer;list-style: none;}
 
-input{margin-top: 3px;}
+input{margin-top: 10px;}
 
 input:focus{outline: 2px solid #ff3636;}
 
@@ -31,9 +31,12 @@ input:focus{outline: 2px solid #ff3636;}
 
 .people{padding: 10px;background: #fff;}
 
+.input-block{margin-left: 20px;}
+.input-block .input{margin-bottom: 20px;}
+
 .get-gf-btn{background: #ff3636;color: #fff;}
-.delete-gf-btn{color: #f50000; font-weight: bold;padding: 0;}
-.add-gf-btn{color: #fff;background: #25bc25;}
+.delete-gf-btn{margin-top: 8px;padding: 2px;color: #f50000; font-weight: bold;border: 1px solid #f50000;}
+.add-gf-btn{background: #25bc25;color: #fff;}
 
 .full-width{width: 50px;height: 50px;position: absolute;z-index: 2;top: 0px;left: 0px;background: cornflowerblue;color: #fff;font-size: 22px;text-align: center;}
 .full-width::after{content: ' ++';font-size: 25px;}

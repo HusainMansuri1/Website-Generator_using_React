@@ -9,15 +9,39 @@ const DyanamicContent = (props) => {
     event.target.classList.toggle('act');
   };
 
-  let arr = [<Banner />, <PeopleBlock pushPeople={props.pushPeopleState}/>]
+  // let arr = [<Banner />, <PeopleBlock pushPeople={props.pushPeopleState}/>]
   
+  let arr = [
+    {id: 'banner', name: <Banner key="banner"/>},
+    {id: 'people', name: 
+      <PeopleBlock 
+        key="people" 
+        pushPeople={props.pushPeopleState} 
+        onDelete = {props.onPeopleDelete}
+        onAdd = {props.onPeopleAdd}
+        onpchange={props.onPeopleChange}
+        click={props.click}
+      />
+    }
+  ]
+
+  const conditionalRendering = () => {
+    return props.check.map(curr => {
+      return arr.map(elem => {
+        if(curr.id === elem.id && curr.show) return elem.name 
+      })
+    })
+  }
+
   return ( 
     <div className='dynamic-add'>
       {/* {props.addedComponents()} */}
-      {arr.map(c => c)}
+
+      {conditionalRendering()}
+
       <button className='full-width' id='full' onClick={fullWidthToggleHandler}></button>
     </div>
    );
-}
+};
 
 export default DyanamicContent;
