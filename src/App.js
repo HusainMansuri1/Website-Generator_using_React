@@ -20,7 +20,7 @@ class App extends Component {
     ],
 
     dynamicComponents: [
-      {id: "banner", show: false, btnText: 'banner'},
+      {id: "banner", show: true, btnText: 'banner'},
       {id: "people", show: true, btnText: 'people'}
     ]
   };
@@ -74,17 +74,27 @@ class App extends Component {
     this.setState({ people });
   }
 
+  scrollInToViewHander = (index, Class, event) => {
+    document.querySelectorAll('.edit-active').forEach(curr => 
+      curr.classList.remove('edit-active')
+    )
+    const currentElement = document.querySelectorAll(`.${Class}`)[index];
+    currentElement.scrollIntoView({behavior: 'smooth'});
+    const array = Array.prototype.slice.call(currentElement.children);
+    currentElement.classList.add('edit-active');
+    
+  }
 
   render() {
     return (
       <div className='App'>
         <div className='divider-block'>
           <StaticContent 
-            pushBtnState={this.state} 
-            change={this.dashbodChange}
-            clickedOn = {this.componentsToggleHandler}
-            delete = {this.deleteGfHandler}
-            add={this.addGfHandler}
+            pushBtnState = {this.state} 
+            change = {this.dashbodChange}
+            clickedOn  = {this.componentsToggleHandler}
+            delete  = {this.deleteGfHandler}
+            add = {this.addGfHandler}
           />
 
           <DyanamicContent
@@ -94,7 +104,7 @@ class App extends Component {
             onPeopleChange = {this.nameChangeHandler}
             onPeopleAdd = {this.addGfHandler}
             addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
-            click={this.faltuHandler}
+            click={this.scrollInToViewHander}
           />
 
         </div>
