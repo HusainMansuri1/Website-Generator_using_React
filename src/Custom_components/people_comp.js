@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-let People = ({ current, click, onDeletee }) => {
+const People = ({ current, click, onDeletee }) => {
   return (
     <li onClick={click}>
       <div>
@@ -19,7 +19,7 @@ const PeopleBlock = (props) => {
         <h3>hey Husain, guess your college 's name using thier Age</h3>
         <div className='persons-wrap'>
           <ul className='gf-block'>
-            {props.pushPeople.people.map((peop, ind) => (
+            {props.pushPeople.state.people.map((peop, ind) => (
               <People key={'gf-no-' + peop.id} 
                 current={peop} 
                 // change={(event) => props.onpchange(event, peop.id)} 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Banner from './Custom_components/banner_comp';
-import People from './Custom_components/people_comp';
+// import Banner from './Custom_components/banner_comp';
+// import People from './Custom_components/people_comp';
 import StaticContent from './containerComponents/static-content';
 import DyanamicContent from './containerComponents/dynamic-content';
 
@@ -14,14 +14,12 @@ class App extends Component {
       { id: this.gfId++, name: 'Nashra', age: '20' },
       { id: this.gfId++, name: 'Tanzila', age: '21' },
       { id: this.gfId++, name: 'Juveria', age: '23' },
-      // { id: this.gfId++, name: 'Guess', age: '21' },
-      // { id: this.gfId++, name: 'Guess', age: '17' },
-      // { id: this.gfId++, name: 'Guess', age: '19' },
     ],
 
     dynamicComponents: [
       {id: "banner", show: true, btnText: 'banner'},
-      {id: "people", show: true, btnText: 'people'}
+      {id: "people", show: true, btnText: 'people'},
+      {id: "footer", show: true, btnText: 'footer'}
     ]
   };
 
@@ -54,16 +52,28 @@ class App extends Component {
     this.setState({ people });
   };
 
-  addGfHandler = () => {
+  addGfHandler = (event) => {
+    // const people = [...this.state.people];
+    // let name = window.prompt("Enter name: ");
+    // let age = Number(window.prompt("Enter Age: "));
+    // if(name && age) {
+    //   people.push({ id: this.gfId++, name: name, age: age });
+    //   this.setState({ people });
+    // } else {
+    //   alert("Gf creation failed: Please enter both fields\nName in letters \nAge in Numbers");
+    // }
+
     const people = [...this.state.people];
-    let name = window.prompt("Enter name: ");
-    let age = Number(window.prompt("Enter Age: "));
-    if(name && age) {
-      people.push({ id: this.gfId++, name: name, age: age });
-      this.setState({ people });
-    } else {
-      alert("Gf creation failed: Please enter both fields\nName in letters \nAge in Numbers");
-    }
+    // const block = `
+    //   <div class="input-block">
+    //     <input></input>
+    //     <input></input>
+    //   </div>
+    // `
+    // document.querySelector('.input-block').innerHTML += block;
+
+    people.push({ id: this.gfId++, name: '', age: '' })
+    this.setState({ people });
   };
 
   dashbodChange = (event,index) => {
@@ -75,15 +85,12 @@ class App extends Component {
   }
 
   scrollInToViewHander = (index, Class, event) => {
-    document.querySelectorAll('.edit-active').forEach(curr => 
-      curr.classList.remove('edit-active')
-    )
+    const editActive = document.querySelector('.edit-active');
+    editActive ? editActive.classList.remove('edit-active') : null;
     const currentElement = document.querySelectorAll(`.${Class}`)[index];
     currentElement.scrollIntoView({behavior: 'smooth'});
-    const array = Array.prototype.slice.call(currentElement.children);
     currentElement.classList.add('edit-active');
-    
-  }
+  };
 
   render() {
     return (
@@ -99,7 +106,7 @@ class App extends Component {
 
           <DyanamicContent
             check = {this.state.dynamicComponents}
-            pushPeopleState = {this.state} 
+            pushPeopleState = {this} 
             onPeopleDelete = {this.deleteGfHandler}
             onPeopleChange = {this.nameChangeHandler}
             onPeopleAdd = {this.addGfHandler}

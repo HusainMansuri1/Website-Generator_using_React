@@ -7,6 +7,8 @@ button{padding: 10px;border: none;background: #fff;outline: none;}
 li{padding: 10px;border: 1px solid #ccc;margin-bottom: 10px;cursor: pointer;list-style: none;}
 
 input{margin-top: 10px;}
+.input{max-width: 200px;}
+.gf-block li{max-width: 300px;}
 
 input:focus{outline: 2px solid #ff3636;}
 
@@ -19,14 +21,14 @@ input:focus{outline: 2px solid #ff3636;}
 .toggler.selected::after{content: " - ";}
 .toggler.selected::before{content: 'Remove '}
 
-.counter-block{margin: 20px 5px;}
+.counter-block{margin: 20px;}
 
 .banner {padding: 20px 0;background: #444;color: #fff;text-align: center;}
 
 .divider-block{height: calc(100% - 143px);display: flex;}
 .static-content{flex: 1;}
 .dynamic-add{flex: 2;}
-.dynamic-add{height: 100vh;border-left: 1px solid #ccc; overflow: auto; position: relative;background:#ccc;transition: width .3s ease-in;}
+.dynamic-add{height: 100vh;border-left: 1px solid #ccc; overflow: auto; position: relative;transition: width .3s ease-in;}
 .dynamic-add.full-active{width: 100%;border: 0;margin: 0;position: absolute;top: 0;left: 0;}
 
 .people{padding: 10px;background: #fff;}
@@ -47,3 +49,5 @@ input:focus{outline: 2px solid #ff3636;}
 .static-content{height: 100vh;overflow: auto;}
 
 .edit-active{border: 1px solid blue;}
+
+footer{background: #444;padding: 20px 10px;color: #fff;text-align: center;text-transform: capitalize;font-size: 17px;font-weight: 600;}

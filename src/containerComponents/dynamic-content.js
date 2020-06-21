@@ -1,6 +1,7 @@
 import React from 'react';
 import PeopleBlock from '../Custom_components/people_comp';
 import Banner from '../Custom_components/banner_comp';
+import Footer from '../Custom_components/footer';
 
 const DyanamicContent = (props) => {
   
@@ -22,16 +23,17 @@ const DyanamicContent = (props) => {
         onpchange={props.onPeopleChange}
         click={props.click}
       />
-    }
+    },
+    {id: 'footer', name: <Footer />}
   ]
 
   const conditionalRendering = () => {
     return props.check.map(curr => {
       return arr.map(elem => {
-        if(curr.id === elem.id && curr.show) return elem.name 
-      })
-    })
-  }
+        if(curr.id === elem.id && curr.show) return elem.name; 
+      });
+    });
+  };
 
   return ( 
     <div className='dynamic-add'>
