@@ -27,7 +27,7 @@ input:focus{outline: 2px solid #ff3636;}
 
 .divider-block{height: calc(100% - 143px);display: flex;}
 .static-content{flex: 1;}
-.dynamic-add{flex: 2;}
+.dynamic-add{flex: 2;background: #fff;}
 .dynamic-add{height: 100vh;border-left: 1px solid #ccc; overflow: auto; position: relative;transition: width .3s ease-in;}
 .dynamic-add.full-active{width: 100%;border: 0;margin: 0;position: absolute;top: 0;left: 0;}
 
