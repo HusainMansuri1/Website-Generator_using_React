@@ -16,6 +16,8 @@ const StaticContent = (props) => {
         clickedOn_1 =  {props.clickedOn}
         delete_1 =  {props.delete}
         add_1 = {props.add}
+        conditionalRendering = {props.addedynamicComponentsonents}
+        check_1 = {props.check}
       />
 
       {/* <input type='text' className="name" onChange={change} value={name} /><br />

@@ -102,6 +102,8 @@ class App extends Component {
             clickedOn  = {this.componentsToggleHandler}
             delete  = {this.deleteGfHandler}
             add = {this.addGfHandler}
+            addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
+            check = {this.state.dynamicComponents}
           />
 
           <DyanamicContent
