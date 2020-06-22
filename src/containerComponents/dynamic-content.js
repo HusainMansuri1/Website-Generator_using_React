@@ -13,10 +13,14 @@ const DyanamicContent = (props) => {
   // let arr = [<Banner />, <PeopleBlock pushPeople={props.pushPeopleState}/>]
   
   let arr = [
-    {id: 'banner', name: <Banner key="banner"/>},
+    {id: 'banner', name: 
+      <Banner key="banner"
+        pushBanner = {props.pushBannerState}
+      />
+    
+    },
     {id: 'people', name: 
-      <PeopleBlock 
-        key="people" 
+      <PeopleBlock key="people" 
         pushPeople={props.pushPeopleState} 
         onDelete = {props.onPeopleDelete}
         onAdd = {props.onPeopleAdd}

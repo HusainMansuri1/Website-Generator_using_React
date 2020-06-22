@@ -1,10 +1,10 @@
 import React from 'react';
 
-const banner = () => {
+const banner = (props) => {
   return (
     <section className='banner'>
-      <h1>Guess Gf's name</h1>
-      <p>First Practise React Project, just for Fun</p>
+      <h1>{props.pushBanner.heading}</h1>
+      <p>{props.pushBanner.para}</p>
     </section>
   );
 };

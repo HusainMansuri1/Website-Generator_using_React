@@ -33,7 +33,7 @@ input:focus{outline: 2px solid #ff3636;}
 
 .people{padding: 10px;background: #fff;}
 
-.input-block{margin-left: 20px;margin-bottom: 1000px;margin-top: 20px;}
+.input-block{margin: 20px;border: 1px solid #ccc;padding: 5px;}
 .input-block .input{margin-bottom: 20px;padding: 5px;}
 
 .get-gf-btn{background: #ff3636;color: #fff;}
@@ -50,4 +50,4 @@ input:focus{outline: 2px solid #ff3636;}
 
 .edit-active{border: 1px solid blue;}
 
-footer{background: #444;padding: 20px 10px;color: #fff;text-align: center;text-transform: capitalize;font-size: 17px;font-weight: 600;}
+footer{margin-top: 1px;background: #444;padding: 20px 10px;color: #fff;text-align: center;text-transform: capitalize;font-size: 17px;font-weight: 600;}

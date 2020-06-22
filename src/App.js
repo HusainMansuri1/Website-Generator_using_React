@@ -16,11 +16,16 @@ class App extends Component {
       { id: this.gfId++, name: 'Juveria', age: '23' },
     ],
 
+    banner: {
+      heading: 'Get Gf Project',
+      para: 'first React project just for fu*k'
+    },
+
     dynamicComponents: [
       {id: "banner", show: true, btnText: 'banner'},
       {id: "people", show: true, btnText: 'people'},
       {id: "footer", show: true, btnText: 'footer'}
-    ]
+    ],
   };
 
   // state change
@@ -82,6 +87,14 @@ class App extends Component {
       ?  people[index].name = event.target.value
       :  people[index].age = event.target.value;
     this.setState({ people });
+  };
+
+  bannerChange = (event) => {
+    const banner = {...this.state.banner};
+    event.target.classList.contains('heading')
+      ? banner.heading = event.target.value
+      : banner.para = event.target.value;
+    this.setState({ banner });
   }
 
   scrollInToViewHander = (index, Class, event) => {
@@ -98,17 +111,19 @@ class App extends Component {
         <div className='divider-block'>
           <StaticContent 
             pushBtnState = {this.state} 
+            pushBannerState = {this.state.banner}
             change = {this.dashbodChange}
+            bannerChange = {this.bannerChange}
             clickedOn  = {this.componentsToggleHandler}
             delete  = {this.deleteGfHandler}
             add = {this.addGfHandler}
-            addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
             check = {this.state.dynamicComponents}
           />
 
           <DyanamicContent
             check = {this.state.dynamicComponents}
             pushPeopleState = {this} 
+            pushBannerState = {this.state.banner}
             onPeopleDelete = {this.deleteGfHandler}
             onPeopleChange = {this.nameChangeHandler}
             onPeopleAdd = {this.addGfHandler}
