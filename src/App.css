@@ -10,7 +10,7 @@ input{margin-top: 10px;}
 .input{max-width: 200px;}
 .gf-block li{max-width: 300px;}
 
-input:focus{outline: 2px solid #ff3636;}
+input:focus{outline: 1px solid #3669d8f1;}
 
 .toggler{width: 100%;margin-bottom: 10px;display: block;background: #25bc25;color: #fff;font: 400 18px sans-serif;letter-spacing: .5px;}
 .toggler.selected{background: #d60000;}

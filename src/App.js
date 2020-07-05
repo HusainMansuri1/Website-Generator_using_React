@@ -17,13 +17,13 @@ class App extends Component {
     ],
 
     banner: {
-      heading: 'Get Gf Project',
-      para: 'first React project just for fu*k'
+      heading: 'Practise React project',
+      para: 'first React project just'
     },
 
     dynamicComponents: [
       {id: "banner", show: true, btnText: 'banner'},
-      {id: "people", show: true, btnText: 'people'},
+      {id: "people", show: false, btnText: 'people'},
       {id: "footer", show: true, btnText: 'footer'}
     ],
   };
@@ -36,9 +36,9 @@ class App extends Component {
   };
   
   // state change
-  getAddedynamicComponentsonents = () => (
-    this.state.components.map((curr) => curr.show ? curr.name : null)
-  );
+  // getAddedynamicComponentsonents = () => (
+  //   this.state.components.map((curr) => curr.show ? curr.name : null)
+  // );
 
   deleteGfHandler = (index, name) => {
     if(window.confirm(`Are you sure you want to remove  "${name}" from your life ?`)){
@@ -58,25 +58,7 @@ class App extends Component {
   };
 
   addGfHandler = (event) => {
-    // const people = [...this.state.people];
-    // let name = window.prompt("Enter name: ");
-    // let age = Number(window.prompt("Enter Age: "));
-    // if(name && age) {
-    //   people.push({ id: this.gfId++, name: name, age: age });
-    //   this.setState({ people });
-    // } else {
-    //   alert("Gf creation failed: Please enter both fields\nName in letters \nAge in Numbers");
-    // }
-
     const people = [...this.state.people];
-    // const block = `
-    //   <div class="input-block">
-    //     <input></input>
-    //     <input></input>
-    //   </div>
-    // `
-    // document.querySelector('.input-block').innerHTML += block;
-
     people.push({ id: this.gfId++, name: '', age: '' })
     this.setState({ people });
   };
@@ -99,7 +81,7 @@ class App extends Component {
 
   scrollInToViewHander = (index, Class, event) => {
     const editActive = document.querySelector('.edit-active');
-    editActive ? editActive.classList.remove('edit-active') : null;
+    if(editActive)  editActive.classList.remove('edit-active');
     const currentElement = document.querySelectorAll(`.${Class}`)[index];
     currentElement.scrollIntoView({behavior: 'smooth'});
     currentElement.classList.add('edit-active');
@@ -124,10 +106,10 @@ class App extends Component {
             check = {this.state.dynamicComponents}
             pushPeopleState = {this} 
             pushBannerState = {this.state.banner}
-            onPeopleDelete = {this.deleteGfHandler}
-            onPeopleChange = {this.nameChangeHandler}
-            onPeopleAdd = {this.addGfHandler}
-            addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
+            // onPeopleDelete = {this.deleteGfHandler}
+            // onPeopleChange = {this.nameChangeHandler}
+            // onPeopleAdd = {this.addGfHandler}
+            // addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
             click={this.scrollInToViewHander}
           />
 
