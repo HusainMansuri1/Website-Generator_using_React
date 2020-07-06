@@ -50,4 +50,6 @@ input:focus{outline: 1px solid #3669d8f1;}
 
 .edit-active{border: 1px solid blue;}
 
+.start, .edit{color: #fff;background: blue;padding: 10px;margin-right: 10px;}
+
 footer{margin-top: 1px;background: #444;padding: 20px 10px;color: #fff;text-align: center;text-transform: capitalize;font-size: 17px;font-weight: 600;}

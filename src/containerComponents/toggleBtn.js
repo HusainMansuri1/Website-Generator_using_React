@@ -9,6 +9,7 @@ const ToggleButton = ({ current, click, decideClasses }) => {
 };
 
 const CounterBlock = (props) => {
+  
 
   const togglerClasses = (id) => {
     const components = props.pushComponentState;
@@ -24,7 +25,7 @@ const CounterBlock = (props) => {
 
   return (
     <div className="counter-block">
-      {props.pushComponentState.map(CC => {
+      {props.phase.Add ? props.pushComponentState.map(CC => {
         return (
           <ToggleButton 
             key = {`btn-${CC.id}`}
@@ -32,8 +33,8 @@ const CounterBlock = (props) => {
             decideClasses={togglerClasses}
             click = {props.clicked}
           />
-        );
-      })}
+        )
+      }): null}
     </div>
   )
 };

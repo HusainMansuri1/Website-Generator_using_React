@@ -26,11 +26,13 @@ const InputContainer = (props) => {
   ];
 
   const conditionalRendering = () => {
-    return props.check_1.map(curr => {
-      return arr.map(elem => {
-        if(elem.id === curr.id && curr.show)  return elem.name; 
+    // if(props.phase.Edit){
+      return props.check_1.map(curr => {
+        return arr.map(elem => {
+          if(elem.id === curr.id && curr.show)  return elem.name; 
+        });
       });
-    });
+    // }
   };
 
   return ( 

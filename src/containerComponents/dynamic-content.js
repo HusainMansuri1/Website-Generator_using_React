@@ -32,11 +32,11 @@ const DyanamicContent = (props) => {
   ]
 
   const conditionalRendering = () => {
-    return props.check.map(curr => {
-      return arr.map(elem => {
-        if(curr.id === elem.id && curr.show) return elem.name; 
+      return props.check.map(curr => {
+        return arr.map(elem => {
+          if(curr.id === elem.id && curr.show) return elem.name; 
+        });
       });
-    });
   };
 
   return ( 

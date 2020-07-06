@@ -22,10 +22,15 @@ class App extends Component {
     },
 
     dynamicComponents: [
-      {id: "banner", show: true, btnText: 'banner'},
+      {id: "banner", show: false, btnText: 'banner'},
       {id: "people", show: false, btnText: 'people'},
-      {id: "footer", show: true, btnText: 'footer'}
+      {id: "footer", show: false, btnText: 'footer'}
     ],
+
+    phase: {
+      Add: false,
+      Edit: false,
+    } 
   };
 
   // state change
@@ -87,9 +92,25 @@ class App extends Component {
     currentElement.classList.add('edit-active');
   };
 
+  startHandler = () => {
+    const phase = {...this.state.phase}
+    phase.Add = true;
+    this.setState({phase});
+  };
+
+  editHandler = () => { 
+    const phase = {...this.state.phase}
+    phase.Edit = !phase.Edit;
+    if(this.state.dynamicComponents.map(c => {
+      if(c.show) this.setState({phase});
+    }));
+  };
+
   render() {
     return (
       <div className='App'>
+        <button className="start" onClick={this.startHandler}>Start</button>
+        <button className="edit" onClick={this.editHandler}>Edit Toggle</button>
         <div className='divider-block'>
           <StaticContent 
             pushBtnState = {this.state} 
@@ -100,8 +121,10 @@ class App extends Component {
             delete  = {this.deleteGfHandler}
             add = {this.addGfHandler}
             check = {this.state.dynamicComponents}
+            phase = {this.state.phase}
           />
 
+          {this.state.phase.Add ?
           <DyanamicContent
             check = {this.state.dynamicComponents}
             pushPeopleState = {this} 
@@ -111,8 +134,10 @@ class App extends Component {
             // onPeopleAdd = {this.addGfHandler}
             // addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
             click={this.scrollInToViewHander}
+            phase = {this.state.phase}
           />
-
+          : null
+          }
         </div>
       </div>
     );
