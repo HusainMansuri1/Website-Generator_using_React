@@ -12,7 +12,7 @@ const InputBlock = (props) => (
         <button onClick={() => props.delete_2(ind, cur.name)}className="delete-gf-btn">delete</button>
       </div>
     ))}
-    <button onClick={props.add_2} className="add-gf-btn">add more gf</button>
+    <button onClick={props.add_2} className="add-gf-btn">add more friends</button>
   </div>
 );
 

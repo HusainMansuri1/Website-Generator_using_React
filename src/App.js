@@ -46,7 +46,7 @@ class App extends Component {
   // );
 
   deleteGfHandler = (index, name) => {
-    if(window.confirm(`Are you sure you want to remove  "${name}" from your life ?`)){
+    if(window.confirm(`Are you sure you want to remove  "${name}" ?`)){
       const people = [...this.state.people];
       people.splice(index, 1);
       this.setState({ people });
