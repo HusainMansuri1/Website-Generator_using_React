@@ -62,7 +62,7 @@ class App extends Component {
     this.setState({ people });
   };
 
-  addGfHandler = (event) => {
+  addHandler = (event) => {
     const people = [...this.state.people];
     people.push({ id: this.gfId++, name: '', age: '' })
     this.setState({ people });
@@ -119,7 +119,7 @@ class App extends Component {
             bannerChange = {this.bannerChange}
             clickedOn  = {this.componentsToggleHandler}
             delete  = {this.deleteGfHandler}
-            add = {this.addGfHandler}
+            add = {this.addHandler}
             check = {this.state.dynamicComponents}
             phase = {this.state.phase}
           />
@@ -131,7 +131,7 @@ class App extends Component {
             pushBannerState = {this.state.banner}
             // onPeopleDelete = {this.deleteGfHandler}
             // onPeopleChange = {this.nameChangeHandler}
-            // onPeopleAdd = {this.addGfHandler}
+            // onPeopleAdd = {this.addHandler}
             // addedynamicComponentsonents = {this.getAddedynamicComponentsonents}
             click={this.scrollInToViewHander}
             phase = {this.state.phase}
